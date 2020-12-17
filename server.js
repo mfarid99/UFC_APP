@@ -7,6 +7,7 @@ const morgan = require("morgan");
 const cors = require("cors");
 const corsOptions = require("./config/cors");
 const AuthRouter = require("./controllers/user");
+const NoteRouter = require("./controllers/notes")
 const auth = require("./auth")
 
 
@@ -25,19 +26,12 @@ app.use(express.static("public"));
 
 //Routers
 
-// app.get("/", (req, res) => {
-//   res.send("hello worldsssss");
-// });
-
-// app.get("/", (req, res) => {
-//   res.send("hello worldsssss");
-// });
 app.get("/", auth, (req, res)=> {
   res.json(req.payload)
 })
-app.use("/auth", AuthRouter);
+app.use("/auth", AuthRouter); 
 
-// app.use("/note", NoteRouter);
+app.use("/note", NoteRouter);
 
 
 
