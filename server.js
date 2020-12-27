@@ -8,6 +8,8 @@ const cors = require("cors");
 const corsOptions = require("./config/cors");
 const AuthRouter = require("./controllers/user");
 const NoteRouter = require("./controllers/notes")
+const CommentRouter = require("./controllers/comments")
+
 const auth = require("./auth")
 
 
@@ -32,6 +34,8 @@ app.get("/", auth, (req, res)=> {
 app.use("/auth", AuthRouter); 
 
 app.use("/note", NoteRouter);
+app.use("/comment", CommentRouter);
+
 
 
 
