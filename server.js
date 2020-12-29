@@ -13,18 +13,11 @@ const CommentRouter = require("./controllers/comments")
 const auth = require("./auth")
 
 
-
-
 app.use(NODE_ENV === "production" ? cors(corsOptions) : cors());
 app.use(morgan("tiny"));
 app.use(express.json());
 app.use(express.static("public"));
  
-
-// 
-// const NoteRouter = require("./controllers.notes")
-
-//Middleware
 
 //Routers
 

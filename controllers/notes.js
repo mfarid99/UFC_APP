@@ -1,4 +1,3 @@
-// const User = require ("../models/user");
 const Note = require("../models/notes")
 const auth = require("../auth")
 const {Router} = require("express");

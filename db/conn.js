@@ -5,11 +5,7 @@ const config = {useNewUrlParser: true, useUnifiedTopology: true };
 
 
 mongoose.connect(MONGODBURI, config);
-// mongoose.set("useCreateIndex", true);
-
-///////////////////////////////////////
-// DATABASE EVENTS
-///////////////////////////////////////
+ 
 mongoose.connection
 .on("open", () => 
   console.log("YOU ARE CONNECTED TO MONGO"))
@@ -18,7 +14,4 @@ mongoose.connection
 .on("error", (err) => 
     console.log(err));
 
-///////////////////////////////
-// EXPORT CONNECTION TO USE IN OTHER SCRIPTS
-//////////////////////////////
 module.exports = mongoose;
